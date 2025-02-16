@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         predictButton.textContent = "Predicting...";
 
         try {
-            const response = await fetch("https://your-backend-url/predict", {
+            const response = await fetch("https://b50f-35-201-170-89.ngrok-free.app/predict", {
                 method: "POST",
                 body: formData
             });

@@ -7,23 +7,35 @@
     <script type="module" src="./js/main.js"></script>
     <style>
         .drop-zone {
+            width: 50%; /* Setengah dari lebar halaman */
+            margin: 0 auto; /* Agar berada di tengah */
             border: 2px dashed #007bff;
             border-radius: 10px;
-            padding: 20px;
+            padding: 40px; /* Tambah padding agar lebih proporsional */
             text-align: center;
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .drop-zone.dragover {
             background-color: #e3f2fd;
         }
+
+        /* Style untuk preview gambar dan tombol agar sejajar di tengah */
+        .output-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 <body>
-    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 shadow p-3 mb-5 rounded">
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 shadow p-3 mb-5 rounded sticky-top">
         <a class="navbar-brand" href="#">Guess My Age</a>
         <ul class="nav nav-pills">
-            <li class="nav-item"><a class="nav-link" href="#scrollspyHeading1">Guess Age</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#scrollspyHeading1">Guess Age</a></li>
             <li class="nav-item"><a class="nav-link" href="#scrollspyHeading2">Feature 2 (SOON)</a></li>
             <li class="nav-item"><a class="nav-link" href="#scrollspyHeading3">Feature 3 (SOON)</a></li>
             <li class="nav-item"><a class="nav-link" href="#scrollspyHeading4">About & Contact</a></li>
@@ -33,29 +45,72 @@
     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
         
         <!-- Guess My Age Section -->
-        <h4 id="scrollspyHeading1">Guess My Age</h4>
+        <h4 id="scrollspyHeading1" class="text-center">Guess My Age</h4>
         <div id="dropZone" class="drop-zone">
             <p>Drag & drop an image here or <strong>click to select</strong></p>
             <input type="file" id="imageUpload" accept="image/*" hidden>
         </div>
-        <div class="text-center">
+
+        <!-- Output Container -->
+        <div class="output-container">
             <img id="previewImage" class="mt-3 rounded" style="max-width: 200px; display: none;">
             <p id="predictedAge" class="mt-3 fs-5 fw-bold"></p>
             <button id="predictButton" class="btn btn-primary">Predict</button>
         </div>
+
         
         <!-- Other Features -->
         <h4 id="scrollspyHeading2">Feature 2 (SOON)</h4>
-        <p>Coming soon...</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium magnam impedit fugit consequatur architecto? Facere deserunt rem laudantium aperiam accusamus quae, sed ex. Incidunt voluptatem accusantium animi sequi quisquam neque.
+        Molestias, temporibus mollitia. Quae impedit laudantium rerum? Assumenda illum sequi corrupti hic consequuntur inventore repudiandae eligendi odit eius! Blanditiis eos at sit porro eveniet soluta velit odio illo ad. Cum.
+        Veniam corrupti alias et optio libero similique repudiandae deserunt maxime amet hic, iste nemo explicabo voluptatum fugit sapiente expedita recusandae adipisci, delectus rerum officiis impedit commodi? Amet at neque cumque.
+        Nobis veniam itaque quidem blanditiis velit ipsa ut cumque aperiam ducimus distinctio obcaecati, tempore impedit excepturi culpa nesciunt quas eius aut. Qui, maiores soluta aspernatur dignissimos ad beatae reiciendis minus.
+        Fugiat saepe, harum provident mollitia quae voluptatem itaque quod. Eos, alias quaerat natus aliquid ipsam necessitatibus error vero quia. Sequi consequuntur perferendis doloremque exercitationem voluptates, reiciendis eius earum autem repellat!
+        Laborum debitis id accusamus similique. Nostrum, blanditiis vel rem iure alias minima doloremque dolores aspernatur maxime, quia ad, omnis culpa tenetur in deleniti ullam sed pariatur a deserunt veniam sequi!
+        Autem eum corporis eos doloremque, tempora assumenda voluptatibus rem iste laudantium quos, non dolore minima, unde praesentium repudiandae tenetur? Impedit iure reprehenderit, neque quasi eius eligendi aut ipsum corporis consequatur!
+        Deserunt eveniet voluptatem iure tempora, perspiciatis alias. Similique, ad perspiciatis, tempore perferendis sint itaque eveniet quibusdam unde debitis sunt dolores. Doloribus, autem. Minima, animi! Dicta nihil magnam quae veritatis fuga?
+        Cum laboriosam ipsam similique porro enim animi, voluptatum sit? Quis dolores odio iure consectetur officia! Est dicta minus dolores, beatae unde quasi repellendus sint, reprehenderit placeat delectus error fugiat exercitationem!
+        Hic a praesentium voluptate, consectetur iure alias, fugit aliquid natus doloribus voluptatibus mollitia temporibus eius eligendi, exercitationem quia iste accusantium deserunt quis. Odio quibusdam eius nam minus harum? Esse, tempora?
+        Placeat ad mollitia nostrum provident explicabo sit quas, maiores blanditiis, vel aspernatur error, assumenda sapiente fuga inventore iste numquam. Voluptates quasi accusantium ratione consequatur facilis dolorem illo cum at placeat!
+        Saepe quia unde laudantium quo, vel dicta in aliquid perspiciatis blanditiis, dolores impedit consectetur dolorem, repellendus molestiae! Eos, odit quam quos delectus ullam amet sed natus distinctio? Distinctio, unde assumenda!
+        Suscipit nesciunt provident quae consequuntur explicabo id, esse tempora similique perferendis excepturi, nostrum laboriosam? Modi debitis nemo neque aliquam fugiat fugit? Animi velit expedita ab corporis nam incidunt quo odit!
+        Nostrum exercitationem aperiam maxime ipsam! Deleniti culpa ab quia eum, odio dolore cupiditate quo dolorem quasi veritatis sunt obcaecati. Voluptate nostrum ad architecto neque molestias, commodi a facere delectus itaque.
+        Corrupti quasi itaque, facilis expedita labore quo cumque rem amet nobis cum, provident quibusdam ducimus a odio ratione iure incidunt quos veniam consequuntur quam! Natus dolor ad rerum molestiae sequi!
+        Recusandae, culpa nulla cum veniam consequuntur obcaecati nemo quisquam rerum laudantium quia hic suscipit aperiam, odio pariatur maiores consequatur tempore, minima et. Voluptatibus veniam libero quae labore voluptatum cumque recusandae!
+        Blanditiis, rem ea repellat omnis accusamus totam libero quam dolorum velit saepe ex incidunt tempora nam eum dolor vitae quaerat error! Maxime eum, atque sequi deleniti ut saepe corporis explicabo.
+        Ab fugit rem architecto possimus, sapiente modi porro eaque aut quisquam necessitatibus sint suscipit facilis, reprehenderit accusamus exercitationem magnam, cum dolorem atque repudiandae laudantium doloribus enim amet repellat magni. Nihil.
+        Omnis doloribus laudantium, aliquam minus aut, obcaecati recusandae minima est architecto eius impedit expedita, consectetur vero quia? Quibusdam libero ipsum earum tempore nulla alias quidem adipisci illum atque corporis. Fuga?
+        Obcaecati numquam ut veniam expedita illo officia soluta doloremque incidunt odio vero aliquam quidem, sit optio. Error vitae accusantium, asperiores quos ratione odit. Aliquam, iusto laboriosam accusantium a cupiditate asperiores.</p>
+
+        <br><br><br><br><br><br><br><br><br><br>
 
         <h4 id="scrollspyHeading3">Feature 3 (SOON)</h4>
-        <p>Coming soon...</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iste cumque animi delectus, rerum laborum nisi quaerat adipisci ipsam eum? Consequatur blanditiis eius dolorem distinctio eos illo, velit voluptates harum.
+        Dolorem, velit quae. Dolore harum esse perferendis facilis consectetur, odit nam illo nihil velit sit nostrum quidem culpa quibusdam deleniti, minus tempora veritatis, quis quas laboriosam natus nemo eos atque.
+        Odio harum iste accusamus repellendus temporibus facilis. Consequatur itaque aperiam modi. Maxime nobis quisquam aspernatur saepe? Nulla nemo necessitatibus tenetur. Dolore in quas aliquid incidunt distinctio omnis error dolorem magni!
+        Suscipit asperiores laudantium doloribus pariatur quae, eligendi, at sapiente ea quo beatae animi repellat ratione consectetur voluptatibus! Quam, deleniti aliquam magni voluptate obcaecati eius nihil culpa reprehenderit asperiores, dolores ea?
+        Voluptates aperiam explicabo sint ut sit dolorum illo error nemo atque quod neque praesentium, accusamus quis voluptatum. Similique laudantium iure sequi nobis praesentium. Saepe illum corrupti, delectus est eius possimus!
+        Animi eveniet consectetur exercitationem modi voluptas aspernatur atque consequuntur impedit ipsa, qui nostrum. Sunt in dolores ad dolor accusantium voluptate! Dolorum consequuntur ut architecto perspiciatis dignissimos ducimus inventore exercitationem esse.
+        Repudiandae consectetur reprehenderit facere qui perferendis soluta necessitatibus consequatur quibusdam odit! Earum repellat laudantium culpa hic fugit. Alias, ullam? Dolor fuga similique ipsum sit commodi amet iusto rem non perspiciatis!
+        Doloribus autem soluta sit, quasi mollitia natus non itaque molestias explicabo. Consequatur omnis voluptatibus quia, ipsum itaque magnam reiciendis nisi deleniti eligendi laboriosam, exercitationem recusandae nostrum quaerat facere fugit ullam.
+        Delectus consequatur ipsam voluptatem totam aperiam quibusdam quae ut inventore minus mollitia et quisquam, quis, repellat nulla! Enim rem doloribus temporibus ipsum aperiam dignissimos. Vel libero odit exercitationem deleniti eum.
+        Numquam consectetur neque sint quos nam aperiam, harum deleniti aliquid ipsam. Ipsa, cum vero, nisi eaque non animi accusamus nihil saepe sed natus quos cumque voluptatibus vitae voluptatum ab laborum.
+        Mollitia tempora impedit natus! Neque dignissimos aliquam sunt deleniti hic itaque nemo magnam! Veritatis illo, reprehenderit, necessitatibus repellat quasi praesentium, natus corporis accusamus in quaerat aliquam odit! Blanditiis, perferendis iste!
+        Sint expedita fuga pariatur tempora architecto iste sunt nostrum aliquam eligendi autem consectetur neque odit harum cupiditate fugit iusto laboriosam a necessitatibus explicabo cum aperiam, fugiat vel molestiae. Nobis, ducimus?
+        Similique nulla fugiat fugit maxime odio hic reprehenderit non debitis, accusantium consectetur a alias eos ad. Adipisci deserunt itaque ut quibusdam, aliquam vero sequi esse voluptatum facilis, voluptate voluptas neque.
+        Dolorem blanditiis explicabo officiis natus. Dolore quas vitae dolorem! Mollitia ad commodi ipsa tempore? Doloremque aspernatur est ratione, dicta fugiat quidem doloribus ab aliquid sapiente rem, vero error nisi sed.
+        Praesentium quia expedita sit, corporis vitae iusto et inventore dicta eius totam quod architecto veritatis similique ut, cumque non obcaecati at aliquam enim ullam officia! Perferendis harum magnam dolor illum?
+        Ut aut aliquid dolore reprehenderit veritatis. Beatae, iste doloribus dolorum non maxime, tempore odit, aut perferendis expedita placeat corporis excepturi. Molestiae provident quo non, similique sapiente sint consequuntur molestias rerum.
+        Dolore repudiandae ipsam aspernatur voluptate debitis, quis perspiciatis. Ullam voluptate eos animi expedita ipsa sapiente, non eaque nisi obcaecati amet corrupti totam ratione facilis eligendi. Atque nemo eligendi officia sunt.
+        Iusto ratione impedit maiores, totam cum natus soluta possimus nisi iste, molestias sit quae. Velit, fuga dolores? Maiores labore quibusdam culpa veritatis consequuntur blanditiis eum sequi atque iste sunt? Error?
+        Voluptatibus magnam consequuntur blanditiis nemo nam maxime saepe assumenda atque laborum, accusamus pariatur natus debitis eius necessitatibus quaerat possimus tenetur ipsum cupiditate aut impedit perferendis id reprehenderit reiciendis officiis. Fugit!
+        Nam optio maxime sunt distinctio sequi veniam explicabo velit facere soluta! Quidem adipisci eaque ad facere cum beatae tempore sunt quam a. Quis sed quo doloribus, laborum similique itaque laboriosam?</p> <br><br><br><br><br><br><br><br><br><br>
 
         <!-- Footer -->
         <h4 id="scrollspyHeading4">About & Contact</h4>
         <p>&copy; 2025 Guess My Age | Contact us at <a href="mailto:info@example.com">info@example.com</a></p>
     </div>
 
-    <script src="/src/js/index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
