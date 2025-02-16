@@ -1,4 +1,26 @@
-node_modules
-.config
-.venv
-package-lock.json
+# Virtual environment
+backend/.venv/
+venv/
+
+# Cache dan log
+__pycache__/
+*.log
+
+# Node.js dependencies
+node_modules/
+
+# Konfigurasi editor lokal
+.vscode/
+.idea/
+
+# File sementara
+*.swp
+*.tmp
+
+# Database & Uploads
+media/
+uploads/
+
+# File spesifik OS
+.DS_Store
+Thumbs.db
