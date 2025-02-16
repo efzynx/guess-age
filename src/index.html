@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guess My Age</title>
+    <script type="module" src="./js/main.js"></script>
+    <style>
+        .drop-zone {
+            border: 2px dashed #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .drop-zone.dragover {
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 shadow p-3 mb-5 rounded">
+        <a class="navbar-brand" href="#">Guess My Age</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link" href="#scrollspyHeading1">Guess Age</a></li>
+            <li class="nav-item"><a class="nav-link" href="#scrollspyHeading2">Feature 2 (SOON)</a></li>
+            <li class="nav-item"><a class="nav-link" href="#scrollspyHeading3">Feature 3 (SOON)</a></li>
+            <li class="nav-item"><a class="nav-link" href="#scrollspyHeading4">About & Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
+        
+        <!-- Guess My Age Section -->
+        <h4 id="scrollspyHeading1">Guess My Age</h4>
+        <div id="dropZone" class="drop-zone">
+            <p>Drag & drop an image here or <strong>click to select</strong></p>
+            <input type="file" id="imageUpload" accept="image/*" hidden>
+        </div>
+        <div class="text-center">
+            <img id="previewImage" class="mt-3 rounded" style="max-width: 200px; display: none;">
+            <p id="predictedAge" class="mt-3 fs-5 fw-bold"></p>
+            <button id="predictButton" class="btn btn-primary">Predict</button>
+        </div>
+        
+        <!-- Other Features -->
+        <h4 id="scrollspyHeading2">Feature 2 (SOON)</h4>
+        <p>Coming soon...</p>
+
+        <h4 id="scrollspyHeading3">Feature 3 (SOON)</h4>
+        <p>Coming soon...</p>
+
+        <!-- Footer -->
+        <h4 id="scrollspyHeading4">About & Contact</h4>
+        <p>&copy; 2025 Guess My Age | Contact us at <a href="mailto:info@example.com">info@example.com</a></p>
+    </div>
+
+    <script src="/src/js/index.js"></script>
+</body>
+</html>
